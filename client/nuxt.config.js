@@ -3,13 +3,15 @@ require('dotenv').config();
 
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 
+const { VUE_APP_BASE_API_URL } = process.env;
+
 module.exports = {
   mode: 'spa',
   /*
    ** Headers of the page
    */
   env: {
-    ...process.env
+    VUE_APP_BASE_API_URL
   },
   head: {
     title: pkg.name,
