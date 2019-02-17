@@ -11,15 +11,16 @@
   "author": "Erwin Mesias <mesiaserwin@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "joi": "^14.3.1",
     "js-sha512": "^0.8.0",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.4.9",
-    "morgan": "^1.9.1",
-    "axios": "^0.18.0"
+    "morgan": "^1.9.1"
   }
 }

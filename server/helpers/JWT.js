@@ -1,10 +1,9 @@
 const jwt = require('jsonwebtoken');
-const { JWT_SECRET } = require('./../env');
 const config = { expiresIn: '30d' };
 
 const JWT = {
   generate: (payload, cb) => {
-    jwt.sign(payload, JWT_SECRET, config, cb);
+    jwt.sign(payload, process.env.JWT_SECRET, config, cb);
   },
 
   decode: token => {
@@ -12,7 +11,7 @@ const JWT = {
   },
 
   verify: (token, cb) => {
-    jwt.verify(token, JWT_SECRET, cb);
+    jwt.verify(token, process.env.JWT_SECRET, cb);
   }
 };
 

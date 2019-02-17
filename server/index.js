@@ -4,9 +4,9 @@ const cors = require('cors');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const routes = require('./routes');
+require('dotenv').config();
 
-const env = require('./env');
-mongoose.connect(env.MONGODB_URI, { useNewUrlParser: true }, () => {
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, () => {
   console.log('Connected to MongoDB');
 });
 
