@@ -17,6 +17,13 @@ app.use(cors());
 
 routes(app);
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(`${__dirname}/public/`));
+  app.get(/.*/, (request, response) =>
+    response.sendFile(`${__dirname}/public/index.html`)
+  );
+}
+
 app.listen(8000, () => {
   console.log('App listening to port 8000');
 });

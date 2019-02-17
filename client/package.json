@@ -6,11 +6,12 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt build && cp .htaccess ./../server/public",
     "start": "nuxt start",
-    "generate": "nuxt generate && cp .htaccess dist",
+    "generate": "nuxt generate && cp .htaccess ./../server/public",
     "deploy": "push-dir --dir=dist --branch=dist --cleanup --force",
-    "gen-deploy": "npm run generate && npm run deploy"
+    "gen-deploy": "npm run generate && npm run deploy",
+    "build-deploy": "npm run build && npm run deploy"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
@@ -26,7 +27,6 @@
   },
   "devDependencies": {
     "node-sass": "^4.11.0",
-    "nodemon": "^1.18.9",
     "push-dir": "^0.4.1",
     "sass-loader": "^7.1.0",
     "stylus": "^0.54.5",

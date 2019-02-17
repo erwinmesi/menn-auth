@@ -27,6 +27,10 @@ module.exports = {
     ]
   },
 
+  generate: {
+    dir: './../server/public'
+  },
+
   /*
    ** Customize the progress-bar color
    */
@@ -78,6 +82,7 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
+    dir: './../server/public'
   }
 };
