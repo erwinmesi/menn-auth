@@ -2,7 +2,7 @@ import axios from 'axios';
 import lodashGet from 'lodash.get';
 
 const API = axios.create({
-  baseURL: process.env.BASE_API_URL
+  baseURL: process.env.VUE_APP_BASE_API_URL
 });
 
 API.interceptors.request.use(config => {

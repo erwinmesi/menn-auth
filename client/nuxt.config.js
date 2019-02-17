@@ -1,15 +1,16 @@
 const pkg = require('./package');
-const env = require('./config/env.js');
+require('dotenv').config();
 
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 
 module.exports = {
   mode: 'spa',
-  env,
-
   /*
    ** Headers of the page
    */
+  env: {
+    ...process.env
+  },
   head: {
     title: pkg.name,
     meta: [

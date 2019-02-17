@@ -1,5 +1,5 @@
 {
   "version": 1.0,
-  "name": "menn-api",
-  "alias": ["menn-api.now.sh", "menn-api.com"]
+  "name": "menn",
+  "alias": ["menn.now.sh", "menn.com"]
 }

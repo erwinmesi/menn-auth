@@ -7,6 +7,7 @@ const router = express.Router();
 const jwtHelper = require('./../helpers/JWT');
 const resetPasswordHelper = require('./../helpers/ResetPassword');
 const { expectedError } = require('./../helpers/Response');
+const { getURL } = require('./../helpers/Request');
 const User = require('./../models/User');
 const { sendPasswordResetLink } = require('./../helpers/Mailer');
 var sha512 = require('js-sha512');
@@ -87,13 +88,15 @@ router.post(
         }
       });
 
+      const FRONT_END_URL = process.env.FRONT_END_URL || getURL(request);
+
       const mail = {
         subject: 'Reset Password',
         senderEmail: process.env.APP_EMAIL,
         recipient,
         senderName: process.env.APP_NAME,
         content: resetPasswordHelper.getContent(
-          `${process.env.FRONT_END_URL}/reset-password/${token}`
+          `${FRONT_END_URL}/reset-password/${token}`
         )
       };
 
